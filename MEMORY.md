@@ -88,3 +88,32 @@ Old: "What should I do?" → New: "What would genuinely delight Cho?"
 - **Rule:** NEVER auto-update. Notify Cho only.
 - **Skills tracked:** youtube-watcher, humanizer, remotion-video-toolkit, prompt-engineering-expert, superdesign, brain (2nd-brain)
 - **OpenClaw:** Current v2026.4.15
+
+## Security & Monitoring (2026-04-21)
+
+**fail2ban** — Installed & configured for SSH brute-force protection
+- Config: `/etc/fail2ban/jail.local`
+- Rule: 5 failed login attempts = 30min ban
+- Status: `sudo fail2ban-client status sshd`
+- Log: `/var/log/auth.log`
+
+**VPS Watchdog Cron** — Every 30 minutes, isolated agentTurn
+- Cron ID: `8c46cfe6-b42d-4166-b0c3-c659be5f9c7c`
+- Script: `~/.openclaw/workspace/skills/vps-watchdog/scripts/watchdog.sh`
+- Schedule: `*/30 * * * *` (Asia/Manila TZ)
+- Checks: miners, malware, brute-force (fail2ban), CPU, RAM, load, rootkit indicators
+- Alert thresholds (no false positives):
+  - CPU: >85% sustained (3 samples over 15s, not spike)
+  - RAM: >90% used (excludes buffer/cache)
+  - Load: >3x num CPU cores (4 cores = >12)
+  - SSH failures: >50 in 10min window
+  - Any miner process match
+  - Any unexpected SUID in /tmp or /dev/shm
+- Silent on clean runs (no message unless real threat found)
+- Telegram alerts to Cho when threats detected
+
+**Watchdog false positive prevention:**
+- Root process whitelist: 30+ common Ubuntu services
+- CPU checked 3x (5s apart) to avoid spikes
+- RAM calculated: (total - available) / total × 100 (proper method)
+- fail2ban: only alerts if banned_count > 0 (not on empty "Banned IP list:")
