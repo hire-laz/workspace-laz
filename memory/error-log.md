@@ -20,3 +20,6 @@ This is an append-only log. Every failure, correction, gotcha, and discovery get
 - ⚠️ **VPS IP geolocation is Germany** — Despite setting Philippines geo/headers in agent-browser, sites like Google detect the server IP as DE. Language headers (en-PH) are applied but IP-based geolocation cannot be overridden without a PH proxy.
 - 🔄 **LLM idle timeout** — Set to 300s (5 minutes). Default was 120s.
 - 🏗️ **QMD memory backend** — Enabled with brain/, skills/, error-log.md indexed. Session transcripts enabled. This is the primary memory system.
+
+- ⚠️ **GitHub PAT scope issue** — PAT token has `allows_permissionless_access=true` instead of explicit repo write scope. Pushing via git requires repo write scope. Workaround: Use `gh auth setup-git` + `gh` CLI for push, or request PAT with `repo` scope.
+- ⚠️ **GitHub fine-grained PAT blocked by org policy** — The hire-laz org requires org approval for fine-grained PATs (github_pat_11...). Git push returns 403 "Permission denied to coderaven" even though API shows push:true permissions. Fix: org owner must go to Settings → Personal access tokens → Approve the pending PAT request. OR: generate a classic PAT (ghp_...) with `repo` scope instead — classic PATs bypass org approval requirement.
