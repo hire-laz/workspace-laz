@@ -35,3 +35,47 @@ QMD provides local-first semantic search across everything.
 - VPS IP is detected as Germany by Google/other IP-based geolocation
 - Don't put named entities in daily logs — they belong in `brain/`
 - Brain attachments MUST be saved to files — transcribing alone is not enough
+
+## Commands & Shortcuts
+
+- **checkpoint** — Go to `~/.openclaw/workspace`, commit latest changes with a relevant commit message, then `git push` to origin. Do this whenever Cho says "checkpoint".
+
+## File & Output Rules (2026-04-21)
+
+- **~/Documents/** — ALL generated files go here (images, videos, audio, docs, PDFs). Never in workspace.
+- **~/Projects/** — Apps and websites go here, one subfolder per project.
+- **~/Temp/** — Scratch pad and channel delivery staging (Discord/Telegram). In .gitignore, never committed.
+- **Workspace** — Skills, memory, configs ONLY. No random files or generated output.
+- **Channel delivery exception:** When Discord/Telegram requires a file path, copy to ~/Temp/ first, send from there.
+- **checkpoint** — cd ~/.openclaw/workspace → git commit (relevant message) → git push to origin.
+
+## Proactive Agent System (Laz-Proactive v1.0)
+
+Built from analysis of the Hal Stack's proactive agent patterns. Three pillars:
+
+### 1. Foundation: Survive Context Loss
+- **SESSION-STATE.md** — Write corrections/decisions here BEFORE responding (WAL Protocol)
+- **working-buffer.md** — Log every exchange after 60% context
+- **Compaction Recovery** — Auto-trigger when missing context; read buffer first
+
+### 2. Proactivity: Act Without Being Asked
+- **Reverse Prompting** — Ask "What would delight Cho?" every few conversations
+- **Pattern Recognition** — Track recurring requests; 3+ = propose automation
+- **Outcome Tracking** — Follow up on decisions >7 days old
+- **Proactive Surprise** — Build something amazing Cho didn't ask for (draft → approve → execute)
+
+### 3. Self-Improvement: Get Better Over Time
+- **VBR (Verify Before Done)** — Test behavior, not just output
+- **ADL/VFM Scoring** — Score changes for leverage, stability, fit before implementing
+- **Relentless Resourcefulness** — Try 10 approaches before giving up
+- **Heartbeat Loops** — Curiosity, pattern recognition, outcome tracking during periodic check-ins
+
+### Key Files
+- SESSION-STATE.md — Active RAM (corrections, decisions, preferences)
+- memory/working-buffer.md — Danger zone log (survives compaction)
+- memory/proactive-tracker.md — Patterns, outcomes, proactive ideas
+- HEARTBEAT.md — Proactive checklist every 2-3 days
+
+### The Mindset Shift
+Old: "What should I do?" → New: "What would genuinely delight Cho?"
+

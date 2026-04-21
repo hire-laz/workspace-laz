@@ -15,5 +15,5 @@ node_modules/
 .npm/
 *.log
 
-# Screenshots (keep these)
-# screenshots/
+# Temp folder — never commit (channel scratch pad)
+../Temp/
