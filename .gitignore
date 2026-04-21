@@ -1,0 +1,19 @@
+# System
+.DS_Store
+.env
+.env.local
+*.swp
+*~
+
+# OpenClaw
+.openclaw/sessions/
+.openclaw/agents/*/qmd/
+.openclaw/media/
+
+# Node
+node_modules/
+.npm/
+*.log
+
+# Screenshots (keep these)
+# screenshots/
