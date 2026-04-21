@@ -31,3 +31,5 @@ This is an append-only log. Every failure, correction, gotcha, and discovery get
 - ⚠️ **Working buffer protocol** — After 60% context, log every exchange to memory/working-buffer.md. Survives compaction.
 - 💡 **Heartbeat is systematic** — Full proactive checklist in HEARTBEAT.md (outcomes, patterns, surprises, growth loops). Not optional, triggers every 2-3 days.
 - 🏗️ **Upstream update checker cron** — Daily 8am Manila (midnight UTC). Checks 6 ClawHub skills + OpenClaw version for updates. Notification only, never auto-updates. Tracker file: `skills/upstream-tracker.json`. Cron ID: c40a4828-2950-44a5-b835-c687436ae4d2.
+- 💡 **Camoufox API (v0.4.11)** — `Camoufox(headless=True)` only. No `timezone` or `locale` kwargs — those don't exist in this version. Venv at `~/.camoufox-env/`, browser at `~/.cache/camoufox/`.
+- ✅ **Camoufox bypasses YouTube + X anti-bot** — Both tested successfully. YouTube shows real consent/video page, X shows real post content. No captcha blocks.
