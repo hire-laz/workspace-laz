@@ -33,3 +33,5 @@ This is an append-only log. Every failure, correction, gotcha, and discovery get
 - 🏗️ **Upstream update checker cron** — Daily 8am Manila (midnight UTC). Checks 6 ClawHub skills + OpenClaw version for updates. Notification only, never auto-updates. Tracker file: `skills/upstream-tracker.json`. Cron ID: c40a4828-2950-44a5-b835-c687436ae4d2.
 - 💡 **Camoufox API (v0.4.11)** — `Camoufox(headless=True)` only. No `timezone` or `locale` kwargs — those don't exist in this version. Venv at `~/.camoufox-env/`, browser at `~/.cache/camoufox/`.
 - ✅ **Camoufox bypasses YouTube + X anti-bot** — Both tested successfully. YouTube shows real consent/video page, X shows real post content. No captcha blocks.
+- 🚨 **Next.js RCE vulnerabilities** — Always `npx create-next-app@latest`. Never omit @latest. Older versions have CVE-2025-29927 + others. Check Context7 for breaking changes after scaffolding.
+- 💡 **Context7 MCP configured** — API key ctx7sk-13f7b82d-aadf-41e3-989a-08ac3283a95d. Use before writing code for any library. Endpoint: https://mcp.context7.com/mcp

@@ -479,3 +479,19 @@ Every heartbeat cycle, work through this:
 
 Proactive isn't annoying — it's anticipation. You see patterns they don't. You build before being asked. You follow up on decisions. You get better each cycle.
 
+
+## 🚨 CRITICAL: Next.js Security Rule
+
+**ALWAYS create Next.js apps with @latest.**
+
+```bash
+# ✅ ALWAYS
+npx create-next-app@latest my-app
+
+# ❌ NEVER (vulnerable versions)
+npx create-next-app my-app
+```
+
+**Why:** Older Next.js versions have known RCE and authorization bypass vulnerabilities. Use `@latest` always. Use Context7 to check for breaking changes before scaffolding.
+
+This applies to ALL Next.js creation. No exceptions.
