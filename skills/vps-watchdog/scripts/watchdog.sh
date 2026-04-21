@@ -37,7 +37,7 @@ log_info() {
 # =============================================================================
 check_miners() {
     log_info "Checking for cryptominers..."
-    local miner_names=("xmrig" "minerd" "cpuminer" "monero" "stratum" "nicehash" "daemon" "cryptonight")
+    local miner_names=("xmrig" "minerd" "cpuminer" "cryptonight" "nicehash" "kswapd0d" "kdevtmpfsi" "kinsing" "kthreadd2" "sysupdate" "networkservice")
     local found=0
 
     for miner in "${miner_names[@]}"; do
@@ -58,18 +58,20 @@ check_suspicious_procs() {
     log_info "Checking for suspicious processes..."
     local alert=0
 
-    # Check for unexpected root processes (root should only have systemd/kernel/cron)
-    local root_procs=$(ps aux | grep "^root" | grep -vE "systemd|kernel|cron|kworker|sshd|sudo|docker|postgres|mysql|nginx|apache|ssh|fail2ban|packagekit|polkit|dbus|udev|journald|rsyslog|psimon|logind|networkd|resolved|unattended|apt|dpkg|python|watchdog" | wc -l)
-    if [ "$root_procs" -gt 15 ]; then
-        log_alert "UNUSUAL NUMBER OF ROOT PROCESSES: $root_procs"
-        ps aux | grep "^root" | grep -vE "systemd|kernel|cron|kworker|sshd|sudo|fail2ban|packagekit" >> "$ALERT_FILE"
+    # Check for unexpected root processes — exclude kernel threads (in []) and known services
+    local root_procs=$(ps aux | grep "^root" | grep -v '\[' | grep -vE "systemd|cron|kworker|sshd|sudo|docker|postgres|mysql|nginx|apache|fail2ban|packagekit|polkit|dbus|udev|journald|rsyslog|psimon|logind|networkd|resolved|unattended|apt|dpkg|python|watchdog|multipathd|qemu-ga|agetty|atd|sshd" | wc -l)
+    if [ "$root_procs" -gt 8 ]; then
+        log_alert "UNUSUAL ROOT PROCESSES: $root_procs unexpected non-kernel root procs"
+        ps aux | grep "^root" | grep -v '\[' | grep -vE "systemd|cron|sshd|sudo|fail2ban|packagekit|polkit|udev|journald|rsyslog|logind|networkd|resolved|unattended|multipathd|qemu-ga|agetty|atd|python|watchdog" >> "$ALERT_FILE"
         alert=1
     fi
 
-    # Check for processes with names in /tmp or /dev/shm
-    if pgrep -f "/tmp/" > /dev/null 2>&1; then
-        log_alert "SUSPICIOUS PROCESS IN /tmp"
-        pgrep -f "/tmp/" | xargs ps aux 2>/dev/null >> "$ALERT_FILE" || true
+    # Check for processes EXECUTING FROM /tmp or /dev/shm (not just using it as data dir)
+    # agent-browser legitimately uses /tmp/agent-browser-chrome-* as user-data-dir — exclude it
+    local tmp_procs=$(ps aux | grep ' /tmp/' | grep -v 'user-data-dir=/tmp/' | grep -v 'grep' | grep -v 'agent-browser' | grep -v 'vps-watchdog')
+    if [ -n "$tmp_procs" ]; then
+        log_alert "SUSPICIOUS PROCESS EXECUTING FROM /tmp"
+        echo "$tmp_procs" >> "$ALERT_FILE"
         alert=1
     fi
 
