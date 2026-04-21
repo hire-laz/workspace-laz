@@ -1,0 +1,15 @@
+{
+  "openclaw": {
+    "current": "2026.4.15",
+    "releaseUrl": "https://github.com/openclaw/openclaw/releases"
+  },
+  "skills": {
+    "youtube-watcher":         { "current": "1.0.0", "upstream": "https://clawhub.ai/michaelgathara/youtube-watcher" },
+    "humanizer":               { "current": "1.0.0", "upstream": "https://clawhub.ai/biostartechnology/humanizer" },
+    "remotion-video-toolkit":  { "current": "1.0.0", "upstream": "https://clawhub.ai/shreefentsar/remotion-video-toolkit" },
+    "prompt-engineering-expert": { "current": "1.0.0", "upstream": "https://clawhub.ai/tomstools11/prompt-engineering-expert" },
+    "superdesign":             { "current": "1.0.0", "upstream": "https://clawhub.ai/mpociot/superdesign" },
+    "brain":                   { "current": "1.0.0", "upstream": "https://clawhub.ai/coderaven/2nd-brain" }
+  },
+  "lastChecked": null
+}

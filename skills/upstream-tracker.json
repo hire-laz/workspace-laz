@@ -1,6 +1,6 @@
 {
   "description": "Tracks ClawHub skill sources and versions for update checking. DO NOT auto-update \u2014 notify only.",
-  "lastChecked": null,
+  "lastChecked": "2026-04-21",
   "openclaw": {
     "currentVersion": "2026.4.15",
     "source": "https://github.com/openclaw/openclaw/releases",
@@ -13,7 +13,7 @@
       "clawhubUrl": "https://clawhub.ai/michaelgathara/youtube-watcher",
       "lastKnownVersion": "1.0.0",
       "lastChecked": "2026-04-21",
-      "notes": "Initial copy from ClawHub. Our version: custom fetch-transcript.sh script."
+      "notes": "Initial copy from ClawHub. Our version: custom fetch-transcript.sh script. ClawHub page only shows security scan — no version field visible."
     },
     {
       "local": "humanizer",
@@ -21,7 +21,7 @@
       "clawhubUrl": "https://clawhub.ai/biostartechnology/humanizer",
       "lastKnownVersion": "1.0.0",
       "lastChecked": "2026-04-21",
-      "notes": "Initial copy. Our version: added Lazy Lifter brand voice guide, split into patterns.md + voice.md."
+      "notes": "Initial copy. Our version: added Lazy Lifter brand voice guide, split into patterns.md + voice.md. ClawHub shows same 24-pattern content as our copy — no version bump detected."
     },
     {
       "local": "remotion-video-toolkit",
@@ -29,7 +29,7 @@
       "clawhubUrl": "https://clawhub.ai/shreefentsar/remotion-video-toolkit",
       "lastKnownVersion": "1.0.0",
       "lastChecked": "2026-04-21",
-      "notes": "Initial copy. Our version: consolidated SKILL.md + 3 reference files (animations, captions, rendering)."
+      "notes": "Initial copy. Our version: consolidated SKILL.md + 3 reference files (animations, captions, rendering). ClawHub shows same 29-rule content — no version bump detected."
     },
     {
       "local": "prompt-engineering-expert",
@@ -37,7 +37,7 @@
       "clawhubUrl": "https://clawhub.ai/tomstools11/prompt-engineering-expert",
       "lastKnownVersion": "1.0.0",
       "lastChecked": "2026-04-21",
-      "notes": "Initial copy. Our version: techniques.md + templates.md + best-practices.md."
+      "notes": "Initial copy. Our version: techniques.md + templates.md + best-practices.md. ClawHub page shows security scan only — no version field visible."
     },
     {
       "local": "superdesign",
@@ -45,7 +45,7 @@
       "clawhubUrl": "https://clawhub.ai/mpociot/superdesign",
       "lastKnownVersion": "1.0.0",
       "lastChecked": "2026-04-21",
-      "notes": "Initial copy. Our version: colors.md (oklch system) + typography.md + animations.md."
+      "notes": "Initial copy. Our version: colors.md (oklch system) + typography.md + animations.md. ClawHub shows same 8-section content — no version bump detected."
     },
     {
       "local": "brain",
@@ -53,7 +53,8 @@
       "clawhubUrl": "https://clawhub.ai/coderaven/2nd-brain",
       "lastKnownVersion": "1.0.0",
       "lastChecked": "2026-04-21",
-      "notes": "Initial copy. Our version: full brain skill with 8 templates."
+      "notes": "Initial copy. Our version: full brain skill with 8 templates. ClawHub shows same content as our copy — no version bump detected."
+    
     }
   ]
 }
