@@ -79,3 +79,12 @@ Built from analysis of the Hal Stack's proactive agent patterns. Three pillars:
 ### The Mindset Shift
 Old: "What should I do?" → New: "What would genuinely delight Cho?"
 
+
+## Upstream Update Checker (2026-04-21)
+
+- **Cron:** Daily 8am Manila (midnight UTC), isolated agentTurn
+- **What it checks:** 6 ClawHub skills + OpenClaw releases
+- **Tracker:** `skills/upstream-tracker.json` — versions, sources, last checked dates
+- **Rule:** NEVER auto-update. Notify Cho only.
+- **Skills tracked:** youtube-watcher, humanizer, remotion-video-toolkit, prompt-engineering-expert, superdesign, brain (2nd-brain)
+- **OpenClaw:** Current v2026.4.15

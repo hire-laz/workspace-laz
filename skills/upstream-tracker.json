@@ -1,0 +1,59 @@
+{
+  "description": "Tracks ClawHub skill sources and versions for update checking. DO NOT auto-update \u2014 notify only.",
+  "lastChecked": null,
+  "openclaw": {
+    "currentVersion": "2026.4.15",
+    "source": "https://github.com/openclaw/openclaw/releases",
+    "docsUrl": "https://docs.openclaw.ai"
+  },
+  "skills": [
+    {
+      "local": "youtube-watcher",
+      "upstream": "michaelgathara/youtube-watcher",
+      "clawhubUrl": "https://clawhub.ai/michaelgathara/youtube-watcher",
+      "lastKnownVersion": "1.0.0",
+      "lastChecked": "2026-04-21",
+      "notes": "Initial copy from ClawHub. Our version: custom fetch-transcript.sh script."
+    },
+    {
+      "local": "humanizer",
+      "upstream": "biostartechnology/humanizer",
+      "clawhubUrl": "https://clawhub.ai/biostartechnology/humanizer",
+      "lastKnownVersion": "1.0.0",
+      "lastChecked": "2026-04-21",
+      "notes": "Initial copy. Our version: added Lazy Lifter brand voice guide, split into patterns.md + voice.md."
+    },
+    {
+      "local": "remotion-video-toolkit",
+      "upstream": "shreefentsar/remotion-video-toolkit",
+      "clawhubUrl": "https://clawhub.ai/shreefentsar/remotion-video-toolkit",
+      "lastKnownVersion": "1.0.0",
+      "lastChecked": "2026-04-21",
+      "notes": "Initial copy. Our version: consolidated SKILL.md + 3 reference files (animations, captions, rendering)."
+    },
+    {
+      "local": "prompt-engineering-expert",
+      "upstream": "tomstools11/prompt-engineering-expert",
+      "clawhubUrl": "https://clawhub.ai/tomstools11/prompt-engineering-expert",
+      "lastKnownVersion": "1.0.0",
+      "lastChecked": "2026-04-21",
+      "notes": "Initial copy. Our version: techniques.md + templates.md + best-practices.md."
+    },
+    {
+      "local": "superdesign",
+      "upstream": "mpociot/superdesign",
+      "clawhubUrl": "https://clawhub.ai/mpociot/superdesign",
+      "lastKnownVersion": "1.0.0",
+      "lastChecked": "2026-04-21",
+      "notes": "Initial copy. Our version: colors.md (oklch system) + typography.md + animations.md."
+    },
+    {
+      "local": "brain",
+      "upstream": "coderaven/2nd-brain",
+      "clawhubUrl": "https://clawhub.ai/coderaven/2nd-brain",
+      "lastKnownVersion": "1.0.0",
+      "lastChecked": "2026-04-21",
+      "notes": "Initial copy. Our version: full brain skill with 8 templates."
+    }
+  ]
+}

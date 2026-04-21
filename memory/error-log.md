@@ -30,3 +30,4 @@ This is an append-only log. Every failure, correction, gotcha, and discovery get
 - 💡 **SESSION-STATE.md is the RAM** — Write corrections/decisions BEFORE responding. Survives session end.
 - ⚠️ **Working buffer protocol** — After 60% context, log every exchange to memory/working-buffer.md. Survives compaction.
 - 💡 **Heartbeat is systematic** — Full proactive checklist in HEARTBEAT.md (outcomes, patterns, surprises, growth loops). Not optional, triggers every 2-3 days.
+- 🏗️ **Upstream update checker cron** — Daily 8am Manila (midnight UTC). Checks 6 ClawHub skills + OpenClaw version for updates. Notification only, never auto-updates. Tracker file: `skills/upstream-tracker.json`. Cron ID: c40a4828-2950-44a5-b835-c687436ae4d2.
