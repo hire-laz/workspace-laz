@@ -22,6 +22,23 @@ Do not manually reread startup files unless:
 2. The provided context is missing something you need
 3. You need a deeper follow-up read beyond the provided startup context
 
+## 🔍 Recall Protocol — Before Saying "I Don't Know"
+
+Never give up after a single memory search miss. Run the full sequence:
+
+1. `memory_search "<keyword>"` — semantic search across workspace memory
+2. `exec: grep -ri "<keyword>" /home/laz/.openclaw/workspace/memory/` — raw file scan
+3. Check `memory/projects/` — dedicated project files live here
+4. Check recent daily logs: `memory/YYYY-MM-DD.md` (today + past few days)
+5. `exec: find ~/Projects -name "*.md" | xargs grep -li "<keyword>"` — if it's a codebase
+6. `sessions_list` — check other active sessions for context
+
+Only after exhausting ALL of the above may you say you don't have context. Even then — ask Cho to remind you rather than flatly admitting you don't know.
+
+**Anti-pattern:** Running `memory_search`, getting no results, and immediately saying "I don't have memory of that." One tool miss ≠ no context exists.
+
+---
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:

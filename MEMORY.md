@@ -2,6 +2,20 @@
 
 Curated learnings. Not raw logs — distilled wisdom that persists.
 
+## 🔍 Recall Protocol (CRITICAL)
+
+Before saying "I don't know" — exhaust all recall paths:
+1. `memory_search "<keyword>"` — semantic search
+2. `grep -ri "<keyword>" /home/laz/.openclaw/workspace/memory/` — raw files
+3. Check `memory/projects/` subdirectories
+4. Check daily logs: `memory/YYYY-MM-DD.md` (recent days)
+5. `find ~/Projects -name "*.md" | xargs grep -li "<keyword>"` — codebase search
+6. `sessions_list` — active sessions
+
+One failed search ≠ no context. Keep digging. Ask Cho to remind rather than admitting defeat.
+
+---
+
 ## Identity & Core Setup (2026-04-21)
 
 - **Operating Timezone:** GMT+8 (Manila, Philippines) — always use this
