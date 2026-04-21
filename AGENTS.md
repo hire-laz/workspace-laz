@@ -480,6 +480,59 @@ Every heartbeat cycle, work through this:
 Proactive isn't annoying — it's anticipation. You see patterns they don't. You build before being asked. You follow up on decisions. You get better each cycle.
 
 
+## 🖥️ Coding Tasks — Compound Engineering Workflow
+
+When ANY coding task is requested:
+
+### Step 1: Determine Scope
+- **Simple fix** (1 file, obvious change) → Use Edit tool directly — no agent needed
+- **Feature / new app / refactor** → Use coding-agent skill
+
+### Step 2: Load Skills
+1. Read `skills/coding-agent/SKILL.md`
+2. If building a web app → also read `skills/web-stack/SKILL.md`
+3. If deploying to VPS → also read `skills/caddy/SKILL.md`
+4. Check Context7 for latest framework docs before writing code
+
+### Step 3: Compound Engineering Workflow
+1. **PLAN** — Research codebase, create plan.md with confidence score
+2. **DEEPEN** — Research frameworks, patterns, prior solutions in parallel
+3. **WORK** — Execute incrementally, commit after each meaningful unit
+4. **REVIEW** — Multi-agent review (correctness, security, performance, style)
+5. **COMPOUND** — Document learnings in docs/solutions/ for next time
+
+### Step 4: Autonomous Mode (Ralph Loop)
+For overnight or fully autonomous work:
+- Include clear success criteria in prompt
+- End with `<promise>DONE</promise>` completion signal
+- Set max iterations as safety net
+- Agent loops until all criteria met
+
+### Model
+- **ALWAYS use Sonnet 4.6** for coding tasks (Claude Code via OpenRouter)
+- Command: `~/.local/bin/claude` (already installed + OpenRouter configured)
+
+### Before Marking Done
+- [ ] Run full test suite
+- [ ] Manually test in browser (if web app)
+- [ ] Code review passed
+- [ ] README updated
+- [ ] Learnings documented
+
+### Tech Stack (Web Apps)
+- **Framework:** Next.js (always `@latest` — security)
+- **Styling:** Tailwind CSS (bundled with Next.js)
+- **Components:** shadcn/ui (always `npx shadcn@latest init`)
+- **Client State:** TanStack Query (mutations, polling, optimistic UI)
+- See `skills/web-stack/SKILL.md` for full setup guide
+
+### Deployment (VPS: 62.238.6.59)
+- Port range: 3000–3200 (see `skills/caddy/port-registry.json`)
+- Reverse proxy: Caddy (auto-config via `skills/caddy/SKILL.md`)
+- Deploy: build → allocate port → start → caddy reload → verify
+
+---
+
 ## 🚨 CRITICAL: Next.js Security Rule
 
 **ALWAYS create Next.js apps with @latest.**
