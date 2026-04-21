@@ -4,6 +4,12 @@
     3000,
     3200
   ],
-  "allocated": {},
-  "lastUpdated": "2026-04-21T18:42:00Z"
+  "allocated": {
+    "3000": {
+      "app": "todo-app",
+      "status": "running",
+      "createdAt": "2026-04-21T18:50:36.060321Z"
+    }
+  },
+  "lastUpdated": "2026-04-21T18:50:36.060332Z"
 }
