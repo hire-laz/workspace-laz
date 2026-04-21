@@ -117,3 +117,37 @@ Old: "What should I do?" → New: "What would genuinely delight Cho?"
 - CPU checked 3x (5s apart) to avoid spikes
 - RAM calculated: (total - available) / total × 100 (proper method)
 - fail2ban: only alerts if banned_count > 0 (not on empty "Banned IP list:")
+
+## Coding Agent Stack (2026-04-21)
+
+**Claude Code CLI:** v2.1.116 — `~/.local/bin/claude`
+- Configured via OpenRouter (env vars in .zshrc)
+- Non-interactive: `~/.local/bin/claude -p "prompt"`
+- Model: Sonnet 4.6 (via OpenRouter)
+- ANTHROPIC_BASE_URL = https://openrouter.ai/api
+
+**Compound Engineering Workflow:**
+- PLAN → DEEPEN → WORK → REVIEW → COMPOUND
+- Supervised mode: `/build "feature"` (plan + approval gate)
+- Autonomous mode: `/lfg "feature + <promise>DONE</promise>"` (Ralph Loop)
+- Multi-agent review before shipping
+- Document learnings in docs/solutions/
+
+**Skills Built:**
+- `skills/coding-agent/SKILL.md` — full workflow with Sonnet 4.6
+- `skills/web-stack/SKILL.md` — Next.js 16+ + Tailwind + shadcn + TanStack Query
+- `skills/caddy/SKILL.md` — VPS port management (62.238.6.59)
+- `skills/caddy/port-registry.json` — port allocation registry (3000-3200)
+
+**Test Results:**
+- Claude Code: ✅ Non-interactive test (2+2=4), using OpenRouter
+- Next.js 16.2.4: ✅ Scaffolded + built successfully via `create-next-app@latest`
+- TanStack Query v5.99.2: ✅ Installed
+- Port registry: ✅ Allocation + free logic working
+- shadcn: requires interactive mode (runs in terminal, normal)
+
+**VPS Deployment:**
+- IP: 62.238.6.59 (same VPS we're on)
+- Port range: 3000-3200
+- Caddy: local (no SSH needed), `sudo systemctl reload caddy`
+- Deploy: build → allocate port → start → caddy reload → verify
