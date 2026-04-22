@@ -1,6 +1,6 @@
 {
   "openclaw": {
-    "current": "2026.4.15",
+    "current": "2026.4.20",
     "releaseUrl": "https://github.com/openclaw/openclaw/releases"
   },
   "skills": {
@@ -11,5 +11,5 @@
     "superdesign":             { "current": "1.0.0", "upstream": "https://clawhub.ai/mpociot/superdesign" },
     "brain":                   { "current": "1.0.0", "upstream": "https://clawhub.ai/coderaven/2nd-brain" }
   },
-  "lastChecked": null
+  "lastChecked": "2026-04-22"
 }

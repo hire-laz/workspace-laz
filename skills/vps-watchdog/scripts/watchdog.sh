@@ -91,20 +91,13 @@ check_brute_force() {
     log_info "Checking brute-force attacks..."
     local alert=0
 
-    # fail2ban status — only alert if there are actually banned IPs
-    local banned_count=$(sudo fail2ban-client status sshd 2>/dev/null | grep 'Currently banned:' | awk '{print $NF}' || echo 0)
-    if [ "${banned_count:-0}" -gt 0 ]; then
-        log_alert "FAIL2BAN: $banned_count SSH brute-force IPs currently banned"
-        sudo fail2ban-client status sshd >> "$ALERT_FILE" 2>/dev/null || true
+    # SSH brute-force is normal internet background noise — fail2ban handles it automatically.
+    # Only alert if fail2ban itself is DOWN (not running), which is a real problem.
+    if ! sudo fail2ban-client status sshd > /dev/null 2>&1; then
+        log_alert "FAIL2BAN IS DOWN — SSH is unprotected"
         alert=1
-    fi
-
-    # Check auth.log for high failed attempts in last 10 minutes
-    local failed_attempts=$(sudo grep "Failed password" /var/log/auth.log 2>/dev/null | tail -1000 | wc -l)
-    if [ "$failed_attempts" -gt 50 ]; then
-        log_alert "HIGH AUTH FAILURES: $failed_attempts attempts in recent logs"
-        sudo grep "Failed password" /var/log/auth.log 2>/dev/null | tail -20 >> "$ALERT_FILE" || true
-        alert=1
+    else
+        log_info "fail2ban is active and protecting SSH"
     fi
 
     return $alert
