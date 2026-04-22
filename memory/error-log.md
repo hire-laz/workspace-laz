@@ -37,3 +37,4 @@ This is an append-only log. Every failure, correction, gotcha, and discovery get
 - 💡 **Context7 MCP configured** — API key ctx7sk-13f7b82d-aadf-41e3-989a-08ac3283a95d. Use before writing code for any library. Endpoint: https://mcp.context7.com/mcp
 - ✅ **fail2ban + vps-watchdog deployed** — 30min cron, Telegram on real threats only. SSH now protected (5 attempts = 30min ban).
 - 💡 **Watchdog thresholds tuned for accuracy** — CPU: 3-sample average (no false spikes), RAM: excludes cache, load: > 3x cores for 4-core VPS = >12.
+- 🚨 **PDF slides overflow/cutoff** — Root cause: `margin: 20px auto` on `.page` div pushes content past 794px A4 boundary. Fix: `margin: 0` + `page-break-after: always`. The margin is for browser preview only — it breaks PDF rendering. This is now fixed in the slides SKILL.md template permanently.

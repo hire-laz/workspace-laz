@@ -12,8 +12,8 @@ Use `gh` CLI for all GitHub operations within the hire-laz organization.
 - ✅ **CLI installed:** `gh` v2.90.0
 - ✅ **Authenticated as:** coderaven
 - ✅ **Org access:** hire-laz (admin role)
-- ⚠️ **PAT scope limitation:** Current token lacks explicit `repo` write scope. Can create repos and read, but push via git requires `repo` scope.
-- **Workaround:** Use only `gh` CLI commands for push/pull operations when available
+- ✅ **PAT Token:** `github_pat_11AAE2EEA0u7OjQhlj1Yf4_...` (no expiry, set 2026-04-22)
+- ⚠️ **Git push blocked by org policy:** Fine-grained PATs require hire-laz org owner approval. Go to GitHub → Settings → Personal access tokens → Approve the pending token for coderaven.
 
 ## Configuration
 

@@ -165,3 +165,10 @@ Old: "What should I do?" → New: "What would genuinely delight Cho?"
 - Port range: 3000-3200
 - Caddy: local (no SSH needed), `sudo systemctl reload caddy`
 - Deploy: build → allocate port → start → caddy reload → verify
+
+## GitHub Setup (2026-04-22)
+
+- **PAT Token:** `github_pat_11AAE2EEA0u7OjQhlj1Yf4_...` (no expiry) — set via `gh auth login`
+- **gh CLI:** Works fine — authenticated as coderaven, org hire-laz
+- **Git push blocked:** Fine-grained PATs require org owner approval at GitHub → Settings → Personal access tokens → Pending requests
+- **Classic PAT alternative:** Classic PATs (ghp_...) bypass org approval requirement if needed in future
