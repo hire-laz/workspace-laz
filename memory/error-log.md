@@ -38,3 +38,5 @@ This is an append-only log. Every failure, correction, gotcha, and discovery get
 - ✅ **fail2ban + vps-watchdog deployed** — 30min cron, Telegram on real threats only. SSH now protected (5 attempts = 30min ban).
 - 💡 **Watchdog thresholds tuned for accuracy** — CPU: 3-sample average (no false spikes), RAM: excludes cache, load: > 3x cores for 4-core VPS = >12.
 - 🚨 **PDF slides overflow/cutoff** — Root cause: `margin: 20px auto` on `.page` div pushes content past 794px A4 boundary. Fix: `margin: 0` + `page-break-after: always`. The margin is for browser preview only — it breaks PDF rendering. This is now fixed in the slides SKILL.md template permanently.
+
+- 🚨 **Next.js app port default issue** — Built app was serving on default port 3000 instead of 3001. Images were being served correctly but to wrong port. Fix: Use `PORT=3001 npm run start` explicitly when deploying Next.js apps to non-default ports. Always test image URLs before marking work done.
