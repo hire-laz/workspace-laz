@@ -172,3 +172,32 @@ Old: "What should I do?" → New: "What would genuinely delight Cho?"
 - **gh CLI:** Works fine — authenticated as coderaven, org hire-laz
 - **Git push blocked:** Fine-grained PATs require org owner approval at GitHub → Settings → Personal access tokens → Pending requests
 - **Classic PAT alternative:** Classic PATs (ghp_...) bypass org approval requirement if needed in future
+
+## Major Setup Session (2026-04-22)
+
+### Skills Installed
+- **Scrapling** — Advanced web scraping fallback (after agent-browser + Camoufox). Venv at `~/.scrapling-env/`. Browser fallback: agent-browser → Camoufox → Scrapling → proxy
+- **Huashu-Design** — Premium design skill: prototypes, PPTX slides, motion/MP4, infographics, design critique. Use for any design-heavy request. Installed at `skills/huashu-design/`
+- **landing-page-builder** — Professional marketing landing pages. 9-section blueprint. Installed at `skills/landing-page-builder/`
+
+### New Config
+- **Discord** added to openclaw.json — guild "Cho Lim" (1496363328581140542), requireMention=true, autoThread=true. Bot: Laz
+- **UFW removed** — Hetzner cloud firewall handles networking, no need for UFW on VPS
+- **SSH hardened** — PasswordAuthentication no, PermitRootLogin no
+- **Watchdog fixed** — Only alerts if fail2ban DOWN (not on normal brute-force noise)
+- **Context7 MCP** — Still returning 405 (non-critical)
+
+### Active Projects
+- **NutriKaizen** — `/home/laz/Projects/nutrition-funnel`, running `env PORT=3001 npm run start`, live at http://62.238.6.59:3001/. 9-section rebuilt (landing-page-builder blueprint), lucide icons, framer-motion, FAQ+schema, SEO complete.
+
+### Critical Rules Learned
+- **Always QA first** — Screenshot + verify images + check port before telling Cho it's ready
+- **Next.js port** — ALWAYS use `env PORT=3001 npm run start` (not default 3000)
+- **landing-page-builder rules** — No emoji (lucide only), alternating layouts, testimonials NOT 3-card grid, FAQ required, schema markup required
+- **PDF slides** — margin:0 + page-break-after:always (margin: 20px causes overflow)
+
+### Cho's Business
+- **The Lazy Lifter** — Umbrella fitness brand
+- **Kaizen 100-Day Transformation™** — S10 launches July 2026 (fitness + personal dev)
+- **NutriKaizen S1** — Nutrition variant, Summer 2026 enrollment
+- **cholim.ph** — Cloudflare-protected (all scrapers blocked, need manual content sharing)
